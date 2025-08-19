@@ -1661,6 +1661,35 @@ input:checked + .card .sprinkles [class^=sprinkle] {
     left: -150%;
   }
 }
+.princess-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-family: "Coming Soon", cursive;
+  font-size: 30px;
+  color: #4c2a1e;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+input:checked + .card .princess-message {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  animation: messageAppear 1s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes messageAppear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 @keyframes smokeLeftAni {
   0%, 60%, 100% {
     opacity: 0;
