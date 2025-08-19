@@ -1,0 +1,1677 @@
+@import url("https://fonts.googleapis.com/css?family=Coming+Soon");
+* {
+  transition: 2s;
+}
+
+html, body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #242026;
+}
+
+label {
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+.hint {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Coming Soon", cursive;
+  margin: 10px auto;
+}
+
+.card {
+  width: 700px;
+  height: 460px;
+  min-width: 700px;
+  min-height: 460px;
+  background-image: linear-gradient(40deg, #fff3d8, #ffd987, #cc921e);
+  background-size: 200% 100%;
+  background-position: 0;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.title {
+  font-family: "Coming Soon", cursive;
+  font-size: 60px;
+  margin: 40px 45px;
+  color: #4c2a1e;
+  transform: rotate(-3deg);
+  position: absolute;
+  z-index: 999;
+  -webkit-animation: titleAni 2s infinite;
+          animation: titleAni 2s infinite;
+}
+.title span {
+  display: block;
+  line-height: 1.3;
+}
+
+.cake {
+  width: 260px;
+  height: 65px;
+  position: absolute;
+  top: 56%;
+  left: 17%;
+  z-index: 999;
+}
+
+.candle-group {
+  width: 20%;
+  height: 65%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.candle-group .light {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+  top: -80%;
+  -webkit-animation: lightAni 1s infinite;
+          animation: lightAni 1s infinite;
+}
+.candle-group .smoke {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.candle-group .smoke:before, .candle-group .smoke:after {
+  content: "";
+  display: none;
+  background-color: rgba(179, 177, 181, 0.8);
+  box-shadow: 0 0 5px rgba(179, 177, 181, 0.8);
+  position: absolute;
+}
+.candle-group .candle {
+  background: #ff593f;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  border: 4px solid #4c2a1e;
+  border-radius: 5px 5px 0 0;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.candle-group .candle:before {
+  content: "";
+  display: block;
+  background: white;
+  width: 100%;
+  height: 35%;
+  transform: skewY(-30deg);
+  position: absolute;
+  top: 30%;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.candle-group .candle .fire {
+  width: 130%;
+  height: 45%;
+  position: absolute;
+  background: #ffcc66;
+  top: 0;
+  left: 100%;
+  border-radius: 100% 0 60% 50%/60% 0 100% 50%;
+  border: 4px solid #4c2a1e;
+  transform: translate(-40%, -100%) rotate(-28deg);
+  transform-origin: 50% 100%;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+  -webkit-animation: fireAni 1s infinite;
+          animation: fireAni 1s infinite;
+}
+
+.cake-top {
+  width: 64%;
+  height: 90%;
+  background-color: #54728c;
+  margin: auto;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  border-top: 4px solid #4c2a1e;
+  border-left: 4px solid #4c2a1e;
+  border-right: 4px solid #4c2a1e;
+  box-shadow: -25px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-top:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 30%;
+  background-color: #85b6bf;
+  position: relative;
+  top: 50%;
+  transform: translatey(-50%);
+  box-shadow: -25px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.cake-bottom {
+  width: 80%;
+  height: 100%;
+  background-color: #fcdda4;
+  border-radius: 10px 10px 0 0;
+  margin: auto;
+  border-left: 4px solid #4c2a1e;
+  border-right: 4px solid #4c2a1e;
+  border-top: 4px solid #4c2a1e;
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-bottom .butter {
+  width: 100%;
+  height: 55%;
+  background-color: #fc7164;
+  display: flex;
+  position: relative;
+  border-radius: 7px 7px 0 0;
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.cake-bottom .butter .butter-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  position: relative;
+  top: 40%;
+  background-color: #fc7164;
+}
+.cake-bottom .butter .butter-circle:nth-of-type(6) {
+  box-shadow: -35px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.plate {
+  width: 100%;
+  height: 20%;
+  border-radius: 10px;
+  background-color: #4c2a1e;
+  left: -50%;
+  box-shadow: -45px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.boy {
+  width: 230px;
+  height: 280px;
+  position: absolute;
+  top: 15%;
+  left: 55%;
+  z-index: 99;
+}
+
+.boy-head {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 99;
+}
+
+.hairs {
+  width: 110%;
+  height: 60%;
+  position: absolute;
+  z-index: 10;
+  transform: translatex(-4%) rotate(7deg);
+}
+.hairs [class^=hair] {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent #4c2a1e transparent;
+  display: inline-block;
+  position: absolute;
+}
+.hairs .hair1 {
+  border-width: 0 60px 120px 40px;
+  transform: rotate(-30deg);
+  top: -5%;
+  left: -8%;
+}
+.hairs .hair2 {
+  border-width: 0 50px 135px 50px;
+  transform: rotate(-15deg);
+  top: -25%;
+  left: 5%;
+}
+.hairs .hair3 {
+  border-width: 0 60px 130px 50px;
+  transform: rotate(-5deg);
+  top: -30%;
+  left: 20%;
+}
+.hairs .hair4 {
+  border-width: 0 50px 140px 60px;
+  transform: rotate(5deg);
+  top: -35%;
+  left: 35%;
+}
+.hairs .hair5 {
+  border-width: 0 60px 130px 50px;
+  transform: rotate(15deg);
+  top: -25%;
+  left: 55%;
+}
+.hairs .hair6 {
+  border-width: 0 50px 120px 50px;
+  transform: rotate(20deg);
+  top: -10%;
+  left: 70%;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  border-radius: 150px 150px 160px 130px;
+  background-color: #ffddad;
+  position: relative;
+  border: 4px solid #4c2a1e;
+  box-shadow: -20px 0px rgba(0, 0, 0, 0.15) inset;
+}
+.face .eyebrows {
+  position: relative;
+  top: 35%;
+  left: -10%;
+  width: 100%;
+  height: 15%;
+  -webkit-animation: eyebrowsAni 2s infinite;
+          animation: eyebrowsAni 2s infinite;
+}
+.face .eyebrows:before, .face .eyebrows:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  z-index: 10;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+}
+.face .eyebrows:before {
+  border-width: 30px 0 0 100px;
+  border-color: transparent transparent transparent #4c2a1e;
+  transform: rotate(12deg);
+  left: -3%;
+}
+.face .eyebrows:after {
+  border-width: 0 0 30px 120px;
+  border-color: transparent transparent #4c2a1e transparent;
+  transform: rotate(-12deg);
+  left: 58%;
+  top: -1%;
+}
+.face .blush {
+  top: 65%;
+  position: absolute;
+  width: 70%;
+  height: 7%;
+  z-index: 999;
+  -webkit-animation: blushAni 2s infinite;
+          animation: blushAni 2s infinite;
+}
+.face .blush:before, .face .blush:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #ffa49e;
+  border-radius: 45%;
+  box-shadow: -8px -5px rgba(0, 0, 0, 0.1) inset;
+  border: 4px solid #4c2a1e;
+}
+.face .blush:before {
+  width: 25%;
+  height: 100%;
+  left: -20%;
+}
+.face .blush:after {
+  width: 30%;
+  height: 105%;
+  left: 100%;
+  top: 10%;
+}
+.face .eyes {
+  position: relative;
+  top: 37%;
+  left: 8%;
+  width: 90%;
+  height: 11%;
+}
+.face .eyes:before, .face .eyes:after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 100%;
+  background-color: #4c2a1e;
+  border-radius: 45%;
+  position: absolute;
+  z-index: 10;
+  -webkit-animation: blink 2s infinite;
+          animation: blink 2s infinite;
+}
+.face .eyes:before {
+  left: 0;
+}
+.face .eyes:after {
+  left: 55%;
+}
+.face .mouth {
+  position: relative;
+  top: 45%;
+  left: 24%;
+  width: 20%;
+  height: 20%;
+  box-shadow: 15px 0px rgba(0, 0, 0, 0.15) inset;
+  border-radius: 48%;
+  background-color: #4c2a1e;
+  transform: rotate(-5deg);
+  transform-origin: 0 50%;
+  -webkit-animation: breathMouth 2s infinite;
+          animation: breathMouth 2s infinite;
+}
+
+.boy-body {
+  width: 36%;
+  height: 26.8%;
+  position: relative;
+  margin: auto;
+}
+
+.body {
+  width: 90%;
+  height: 80%;
+  position: relative;
+  z-index: 50;
+  border-radius: 50% 50% 0 0;
+  background-color: #4b84d8;
+  border: 4px solid #4c2a1e;
+  top: -11%;
+  box-shadow: -25px 0px rgba(0, 0, 0, 0.15) inset;
+  z-index: 8;
+  overflow: hidden;
+  -webkit-animation: breath 2s infinite;
+          animation: breath 2s infinite;
+}
+.body:before, .body:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 4px solid #4c2a1e;
+  border-radius: 50%;
+  position: relative;
+  top: 14%;
+  left: 6%;
+  margin: 10px;
+  box-shadow: -3px 0px rgba(0, 0, 0, 0.15) inset;
+}
+
+.hands .left-hand, .hands .right-hand {
+  width: 35%;
+  height: 130%;
+  border-radius: 20px;
+  background-color: #ffddad;
+  position: absolute;
+  border: 4px solid #4c2a1e;
+  box-shadow: -10px 0px rgba(0, 0, 0, 0.15) inset;
+  z-index: 1000;
+  transform-origin: center top;
+}
+.hands .left-hand:before, .hands .right-hand:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 30%;
+  background-color: #4b84d8;
+  box-shadow: -10px 0px rgba(0, 0, 0, 0.15) inset;
+  border: 4px solid #4c2a1e;
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+}
+.hands .left-hand {
+  top: 25%;
+  left: 4px;
+  transform: rotate(100deg);
+  z-index: -1;
+  -webkit-animation: leftHandAni 2s infinite;
+          animation: leftHandAni 2s infinite;
+}
+.hands .right-hand {
+  top: 25%;
+  left: 50%;
+  transform: rotate(-120deg);
+  -webkit-animation: rightHandAni 2s infinite;
+          animation: rightHandAni 2s infinite;
+}
+
+.desk {
+  width: 100%;
+  height: 15%;
+  border-top: 4px solid #4c2a1e;
+  position: absolute;
+  top: 88%;
+  background-color: #f4b7b5;
+  z-index: 50;
+  box-shadow: 0px -20px rgba(0, 0, 0, 0.2) inset;
+}
+
+.sprinkles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sprinkles [class^=sprinkle] {
+  width: 5px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-animation: sprinkleAni 5s infinite;
+          animation: sprinkleAni 5s infinite;
+}
+.sprinkles .sprinkle1 {
+  position: absolute;
+  left: 98.5979438455%;
+  top: 26.2492466309%;
+  background-color: #be5d5b;
+  -webkit-animation-delay: -0.1s;
+          animation-delay: -0.1s;
+}
+.sprinkles .sprinkle2 {
+  position: absolute;
+  left: 31.1376011444%;
+  top: 36.6557609837%;
+  background-color: #b1c9d7;
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+.sprinkles .sprinkle3 {
+  position: absolute;
+  left: 90.8787248703%;
+  top: 7.8590208931%;
+  background-color: #eab3c2;
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+.sprinkles .sprinkle4 {
+  position: absolute;
+  left: 34.0146567197%;
+  top: 57.6882447688%;
+  background-color: #b3d9d1;
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+.sprinkles .sprinkle5 {
+  position: absolute;
+  left: 10.2420353391%;
+  top: 49.173940083%;
+  background-color: #ec696c;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+.sprinkles .sprinkle6 {
+  position: absolute;
+  left: 46.8296486221%;
+  top: 77.7624511861%;
+  background-color: #a988c9;
+  -webkit-animation-delay: -0.6s;
+          animation-delay: -0.6s;
+}
+.sprinkles .sprinkle7 {
+  position: absolute;
+  left: 26.712157266%;
+  top: 54.7874813522%;
+  background-color: #d282a8;
+  -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s;
+}
+.sprinkles .sprinkle8 {
+  position: absolute;
+  left: 16.2681926107%;
+  top: -13.7155909461%;
+  background-color: #ffe573;
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+.sprinkles .sprinkle9 {
+  position: absolute;
+  left: 5.8240520129%;
+  top: -17.6566710353%;
+  background-color: #ff769c;
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+}
+.sprinkles .sprinkle10 {
+  position: absolute;
+  left: 31.4168037797%;
+  top: 35.3849973816%;
+  background-color: #b2a5c0;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+}
+.sprinkles .sprinkle11 {
+  position: absolute;
+  left: 92.3295522837%;
+  top: 50.3594230853%;
+  background-color: #d78068;
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+}
+.sprinkles .sprinkle12 {
+  position: absolute;
+  left: 41.889128977%;
+  top: -19.9284364331%;
+  background-color: #dc9c5e;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+.sprinkles .sprinkle13 {
+  position: absolute;
+  left: 23.3470615561%;
+  top: 19.2877838629%;
+  background-color: #ee71bb;
+  -webkit-animation-delay: -1.3s;
+          animation-delay: -1.3s;
+}
+.sprinkles .sprinkle14 {
+  position: absolute;
+  left: 98.5849588903%;
+  top: 27.1795998977%;
+  background-color: #f48e52;
+  -webkit-animation-delay: -1.4s;
+          animation-delay: -1.4s;
+}
+.sprinkles .sprinkle15 {
+  position: absolute;
+  left: 93.5996264368%;
+  top: 52.5825806526%;
+  background-color: #a1bee3;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+.sprinkles .sprinkle16 {
+  position: absolute;
+  left: 84.5731766311%;
+  top: 8.6089481688%;
+  background-color: #a6cd74;
+  -webkit-animation-delay: -1.6s;
+          animation-delay: -1.6s;
+}
+.sprinkles .sprinkle17 {
+  position: absolute;
+  left: 44.1273229821%;
+  top: 48.5618211653%;
+  background-color: #d96598;
+  -webkit-animation-delay: -1.7s;
+          animation-delay: -1.7s;
+}
+.sprinkles .sprinkle18 {
+  position: absolute;
+  left: 74.4335265991%;
+  top: 79.017069645%;
+  background-color: #e986be;
+  -webkit-animation-delay: -1.8s;
+          animation-delay: -1.8s;
+}
+.sprinkles .sprinkle19 {
+  position: absolute;
+  left: 36.2506102381%;
+  top: -16.5233782609%;
+  background-color: #d37e90;
+  -webkit-animation-delay: -1.9s;
+          animation-delay: -1.9s;
+}
+.sprinkles .sprinkle20 {
+  position: absolute;
+  left: 75.3944826204%;
+  top: 58.8590833234%;
+  background-color: #fdbea0;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+}
+.sprinkles .sprinkle21 {
+  position: absolute;
+  left: 93.8732969476%;
+  top: 17.053390017%;
+  background-color: #ffbda0;
+  -webkit-animation-delay: -2.1s;
+          animation-delay: -2.1s;
+}
+.sprinkles .sprinkle22 {
+  position: absolute;
+  left: 46.7405463569%;
+  top: -19.8594153426%;
+  background-color: #ffc785;
+  -webkit-animation-delay: -2.2s;
+          animation-delay: -2.2s;
+}
+.sprinkles .sprinkle23 {
+  position: absolute;
+  left: 38.6682981375%;
+  top: 79.7094340258%;
+  background-color: #d163c3;
+  -webkit-animation-delay: -2.3s;
+          animation-delay: -2.3s;
+}
+.sprinkles .sprinkle24 {
+  position: absolute;
+  left: 70.4221932831%;
+  top: -18.7382826314%;
+  background-color: #ff54c6;
+  -webkit-animation-delay: -2.4s;
+          animation-delay: -2.4s;
+}
+.sprinkles .sprinkle25 {
+  position: absolute;
+  left: 1.5529341114%;
+  top: 3.5111444414%;
+  background-color: #b0b773;
+  -webkit-animation-delay: -2.5s;
+          animation-delay: -2.5s;
+}
+.sprinkles .sprinkle26 {
+  position: absolute;
+  left: 68.2119071595%;
+  top: 19.4870303867%;
+  background-color: #b586d7;
+  -webkit-animation-delay: -2.6s;
+          animation-delay: -2.6s;
+}
+.sprinkles .sprinkle27 {
+  position: absolute;
+  left: 99.7021936626%;
+  top: 43.6838724343%;
+  background-color: #bdcb69;
+  -webkit-animation-delay: -2.7s;
+          animation-delay: -2.7s;
+}
+.sprinkles .sprinkle28 {
+  position: absolute;
+  left: 86.1270896939%;
+  top: -9.361411947%;
+  background-color: #b0b2cb;
+  -webkit-animation-delay: -2.8s;
+          animation-delay: -2.8s;
+}
+.sprinkles .sprinkle29 {
+  position: absolute;
+  left: 35.8267959269%;
+  top: -15.7197815799%;
+  background-color: #f4896b;
+  -webkit-animation-delay: -2.9s;
+          animation-delay: -2.9s;
+}
+.sprinkles .sprinkle30 {
+  position: absolute;
+  left: 29.1891990775%;
+  top: -12.8055146047%;
+  background-color: #aae5d3;
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+}
+.sprinkles .sprinkle31 {
+  position: absolute;
+  left: 19.9770953222%;
+  top: -1.3128722837%;
+  background-color: #975db7;
+  -webkit-animation-delay: -3.1s;
+          animation-delay: -3.1s;
+}
+.sprinkles .sprinkle32 {
+  position: absolute;
+  left: 85.1611126103%;
+  top: 56.7716135779%;
+  background-color: #ffafcb;
+  -webkit-animation-delay: -3.2s;
+          animation-delay: -3.2s;
+}
+.sprinkles .sprinkle33 {
+  position: absolute;
+  left: 32.5481282995%;
+  top: 24.5615412924%;
+  background-color: #ff519a;
+  -webkit-animation-delay: -3.3s;
+          animation-delay: -3.3s;
+}
+.sprinkles .sprinkle34 {
+  position: absolute;
+  left: 24.4148188543%;
+  top: 44.0291944263%;
+  background-color: #a8c074;
+  -webkit-animation-delay: -3.4s;
+          animation-delay: -3.4s;
+}
+.sprinkles .sprinkle35 {
+  position: absolute;
+  left: 48.1468563942%;
+  top: -1.3550182685%;
+  background-color: #e2e497;
+  -webkit-animation-delay: -3.5s;
+          animation-delay: -3.5s;
+}
+.sprinkles .sprinkle36 {
+  position: absolute;
+  left: 10.736514011%;
+  top: 42.2408533279%;
+  background-color: #c8af56;
+  -webkit-animation-delay: -3.6s;
+          animation-delay: -3.6s;
+}
+.sprinkles .sprinkle37 {
+  position: absolute;
+  left: 99.0017556254%;
+  top: 0.2105066318%;
+  background-color: #fcdf9d;
+  -webkit-animation-delay: -3.7s;
+          animation-delay: -3.7s;
+}
+.sprinkles .sprinkle38 {
+  position: absolute;
+  left: 53.0136658501%;
+  top: 20.4934584486%;
+  background-color: #ff9f95;
+  -webkit-animation-delay: -3.8s;
+          animation-delay: -3.8s;
+}
+.sprinkles .sprinkle39 {
+  position: absolute;
+  left: 91.4978549519%;
+  top: 50.0442832356%;
+  background-color: #f1a461;
+  -webkit-animation-delay: -3.9s;
+          animation-delay: -3.9s;
+}
+.sprinkles .sprinkle40 {
+  position: absolute;
+  left: 91.4001393833%;
+  top: -1.6472499986%;
+  background-color: #ffc0d9;
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+}
+.sprinkles .sprinkle41 {
+  position: absolute;
+  left: 9.1023864776%;
+  top: 37.2859686539%;
+  background-color: #ff5dbc;
+  -webkit-animation-delay: -4.1s;
+          animation-delay: -4.1s;
+}
+.sprinkles .sprinkle42 {
+  position: absolute;
+  left: 21.984507563%;
+  top: -0.735483211%;
+  background-color: #ffaeb0;
+  -webkit-animation-delay: -4.2s;
+          animation-delay: -4.2s;
+}
+.sprinkles .sprinkle43 {
+  position: absolute;
+  left: 19.9984287153%;
+  top: 18.4940204076%;
+  background-color: #ff5e62;
+  -webkit-animation-delay: -4.3s;
+          animation-delay: -4.3s;
+}
+.sprinkles .sprinkle44 {
+  position: absolute;
+  left: 66.3733496869%;
+  top: -2.61341297%;
+  background-color: #d0baa0;
+  -webkit-animation-delay: -4.4s;
+          animation-delay: -4.4s;
+}
+.sprinkles .sprinkle45 {
+  position: absolute;
+  left: 71.9677154503%;
+  top: 40.8598898202%;
+  background-color: #ff9abf;
+  -webkit-animation-delay: -4.5s;
+          animation-delay: -4.5s;
+}
+.sprinkles .sprinkle46 {
+  position: absolute;
+  left: 90.2025849922%;
+  top: 52.6215788766%;
+  background-color: #ba6caf;
+  -webkit-animation-delay: -4.6s;
+          animation-delay: -4.6s;
+}
+.sprinkles .sprinkle47 {
+  position: absolute;
+  left: 90.6351541892%;
+  top: 15.3444796652%;
+  background-color: #a4e684;
+  -webkit-animation-delay: -4.7s;
+          animation-delay: -4.7s;
+}
+.sprinkles .sprinkle48 {
+  position: absolute;
+  left: 68.4729821341%;
+  top: 23.6797304521%;
+  background-color: #ffd8be;
+  -webkit-animation-delay: -4.8s;
+          animation-delay: -4.8s;
+}
+.sprinkles .sprinkle49 {
+  position: absolute;
+  left: 65.7933672611%;
+  top: 38.3820365372%;
+  background-color: #ffbb7e;
+  -webkit-animation-delay: -4.9s;
+          animation-delay: -4.9s;
+}
+.sprinkles .sprinkle50 {
+  position: absolute;
+  left: 7.0287531768%;
+  top: 38.3646559217%;
+  background-color: #ff7d96;
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+}
+.sprinkles .sprinkle51 {
+  position: absolute;
+  left: 44.4669607493%;
+  top: 30.6259955071%;
+  background-color: #ff56c9;
+  -webkit-animation-delay: -5.1s;
+          animation-delay: -5.1s;
+}
+.sprinkles .sprinkle52 {
+  position: absolute;
+  left: 87.2183363308%;
+  top: 10.3526495802%;
+  background-color: #d8e1db;
+  -webkit-animation-delay: -5.2s;
+          animation-delay: -5.2s;
+}
+.sprinkles .sprinkle53 {
+  position: absolute;
+  left: 1.6047512522%;
+  top: 0.8996904927%;
+  background-color: #bb705b;
+  -webkit-animation-delay: -5.3s;
+          animation-delay: -5.3s;
+}
+.sprinkles .sprinkle54 {
+  position: absolute;
+  left: 27.5516407088%;
+  top: 55.3470317044%;
+  background-color: #a3ae75;
+  -webkit-animation-delay: -5.4s;
+          animation-delay: -5.4s;
+}
+.sprinkles .sprinkle55 {
+  position: absolute;
+  left: 14.6474063485%;
+  top: 2.3319093987%;
+  background-color: #d289c6;
+  -webkit-animation-delay: -5.5s;
+          animation-delay: -5.5s;
+}
+.sprinkles .sprinkle56 {
+  position: absolute;
+  left: 84.507128636%;
+  top: 19.6357998984%;
+  background-color: #ffdc85;
+  -webkit-animation-delay: -5.6s;
+          animation-delay: -5.6s;
+}
+.sprinkles .sprinkle57 {
+  position: absolute;
+  left: 90.3123470942%;
+  top: 30.0503855381%;
+  background-color: #eeb9c8;
+  -webkit-animation-delay: -5.7s;
+          animation-delay: -5.7s;
+}
+.sprinkles .sprinkle58 {
+  position: absolute;
+  left: 40.061411737%;
+  top: 26.8379953914%;
+  background-color: #9a6ac9;
+  -webkit-animation-delay: -5.8s;
+          animation-delay: -5.8s;
+}
+.sprinkles .sprinkle59 {
+  position: absolute;
+  left: 25.0262508209%;
+  top: 5.1067778134%;
+  background-color: #d1b3ab;
+  -webkit-animation-delay: -5.9s;
+          animation-delay: -5.9s;
+}
+.sprinkles .sprinkle60 {
+  position: absolute;
+  left: 53.0937708691%;
+  top: 54.8172087025%;
+  background-color: #d3aedf;
+  -webkit-animation-delay: -6s;
+          animation-delay: -6s;
+}
+.sprinkles .sprinkle61 {
+  position: absolute;
+  left: 88.3585980056%;
+  top: 46.9949672129%;
+  background-color: #dee1be;
+  -webkit-animation-delay: -6.1s;
+          animation-delay: -6.1s;
+}
+.sprinkles .sprinkle62 {
+  position: absolute;
+  left: 83.9031616553%;
+  top: -2.6098035119%;
+  background-color: #a1a589;
+  -webkit-animation-delay: -6.2s;
+          animation-delay: -6.2s;
+}
+.sprinkles .sprinkle63 {
+  position: absolute;
+  left: 7.1780608293%;
+  top: 47.5113820455%;
+  background-color: #ff8265;
+  -webkit-animation-delay: -6.3s;
+          animation-delay: -6.3s;
+}
+.sprinkles .sprinkle64 {
+  position: absolute;
+  left: 94.7063063392%;
+  top: -3.3561889128%;
+  background-color: #c79187;
+  -webkit-animation-delay: -6.4s;
+          animation-delay: -6.4s;
+}
+.sprinkles .sprinkle65 {
+  position: absolute;
+  left: 62.3169952903%;
+  top: 41.6708547325%;
+  background-color: #c39ac5;
+  -webkit-animation-delay: -6.5s;
+          animation-delay: -6.5s;
+}
+.sprinkles .sprinkle66 {
+  position: absolute;
+  left: 85.091185453%;
+  top: -17.1229592483%;
+  background-color: #ee9f60;
+  -webkit-animation-delay: -6.6s;
+          animation-delay: -6.6s;
+}
+.sprinkles .sprinkle67 {
+  position: absolute;
+  left: 39.7448480112%;
+  top: 11.6209941572%;
+  background-color: #f5b2c9;
+  -webkit-animation-delay: -6.7s;
+          animation-delay: -6.7s;
+}
+.sprinkles .sprinkle68 {
+  position: absolute;
+  left: 95.3455279625%;
+  top: 61.002493319%;
+  background-color: #cf66c9;
+  -webkit-animation-delay: -6.8s;
+          animation-delay: -6.8s;
+}
+.sprinkles .sprinkle69 {
+  position: absolute;
+  left: 41.6325965994%;
+  top: -12.9972242623%;
+  background-color: #f298a4;
+  -webkit-animation-delay: -6.9s;
+          animation-delay: -6.9s;
+}
+.sprinkles .sprinkle70 {
+  position: absolute;
+  left: 35.5901737944%;
+  top: 46.0811059089%;
+  background-color: #bab063;
+  -webkit-animation-delay: -7s;
+          animation-delay: -7s;
+}
+.sprinkles .sprinkle71 {
+  position: absolute;
+  left: 81.780795822%;
+  top: 69.8495897818%;
+  background-color: #ab5d81;
+  -webkit-animation-delay: -7.1s;
+          animation-delay: -7.1s;
+}
+.sprinkles .sprinkle72 {
+  position: absolute;
+  left: 45.9068723045%;
+  top: -10.7602552481%;
+  background-color: #ff8f77;
+  -webkit-animation-delay: -7.2s;
+          animation-delay: -7.2s;
+}
+.sprinkles .sprinkle73 {
+  position: absolute;
+  left: 35.7668220608%;
+  top: 64.7599723644%;
+  background-color: #9ac07b;
+  -webkit-animation-delay: -7.3s;
+          animation-delay: -7.3s;
+}
+.sprinkles .sprinkle74 {
+  position: absolute;
+  left: 41.1128873153%;
+  top: -1.2961995928%;
+  background-color: #ffb876;
+  -webkit-animation-delay: -7.4s;
+          animation-delay: -7.4s;
+}
+.sprinkles .sprinkle75 {
+  position: absolute;
+  left: 74.5626505391%;
+  top: 61.9431410286%;
+  background-color: #c7a162;
+  -webkit-animation-delay: -7.5s;
+          animation-delay: -7.5s;
+}
+.sprinkles .sprinkle76 {
+  position: absolute;
+  left: 82.0769057811%;
+  top: -18.9911090484%;
+  background-color: #ff6ac3;
+  -webkit-animation-delay: -7.6s;
+          animation-delay: -7.6s;
+}
+.sprinkles .sprinkle77 {
+  position: absolute;
+  left: 1.2821253973%;
+  top: -1.1277612004%;
+  background-color: #a05daf;
+  -webkit-animation-delay: -7.7s;
+          animation-delay: -7.7s;
+}
+.sprinkles .sprinkle78 {
+  position: absolute;
+  left: 2.7628357416%;
+  top: 40.2665823038%;
+  background-color: #da71bf;
+  -webkit-animation-delay: -7.8s;
+          animation-delay: -7.8s;
+}
+.sprinkles .sprinkle79 {
+  position: absolute;
+  left: 89.4602664471%;
+  top: 62.8252606545%;
+  background-color: #be9198;
+  -webkit-animation-delay: -7.9s;
+          animation-delay: -7.9s;
+}
+.sprinkles .sprinkle80 {
+  position: absolute;
+  left: 22.9433703542%;
+  top: 16.4719270557%;
+  background-color: #ffa89a;
+  -webkit-animation-delay: -8s;
+          animation-delay: -8s;
+}
+.sprinkles .sprinkle81 {
+  position: absolute;
+  left: 28.5548234437%;
+  top: 33.8121721779%;
+  background-color: #ffa9e3;
+  -webkit-animation-delay: -8.1s;
+          animation-delay: -8.1s;
+}
+.sprinkles .sprinkle82 {
+  position: absolute;
+  left: 10.035493672%;
+  top: 18.2470392823%;
+  background-color: #f4dec9;
+  -webkit-animation-delay: -8.2s;
+          animation-delay: -8.2s;
+}
+.sprinkles .sprinkle83 {
+  position: absolute;
+  left: 91.9115239253%;
+  top: 62.7039985052%;
+  background-color: #9dd963;
+  -webkit-animation-delay: -8.3s;
+          animation-delay: -8.3s;
+}
+.sprinkles .sprinkle84 {
+  position: absolute;
+  left: 31.8406952897%;
+  top: 30.8292039583%;
+  background-color: #a772c0;
+  -webkit-animation-delay: -8.4s;
+          animation-delay: -8.4s;
+}
+.sprinkles .sprinkle85 {
+  position: absolute;
+  left: 83.9031302928%;
+  top: 71.5030044834%;
+  background-color: #e2879c;
+  -webkit-animation-delay: -8.5s;
+          animation-delay: -8.5s;
+}
+.sprinkles .sprinkle86 {
+  position: absolute;
+  left: 12.7249753087%;
+  top: 77.3320480959%;
+  background-color: #ace189;
+  -webkit-animation-delay: -8.6s;
+          animation-delay: -8.6s;
+}
+.sprinkles .sprinkle87 {
+  position: absolute;
+  left: 33.8529122428%;
+  top: 79.3120023746%;
+  background-color: #ae9ce4;
+  -webkit-animation-delay: -8.7s;
+          animation-delay: -8.7s;
+}
+.sprinkles .sprinkle88 {
+  position: absolute;
+  left: 8.2455727064%;
+  top: 47.6995826011%;
+  background-color: #ff9ad3;
+  -webkit-animation-delay: -8.8s;
+          animation-delay: -8.8s;
+}
+.sprinkles .sprinkle89 {
+  position: absolute;
+  left: 40.2894416765%;
+  top: 37.0089392704%;
+  background-color: #d6c16e;
+  -webkit-animation-delay: -8.9s;
+          animation-delay: -8.9s;
+}
+.sprinkles .sprinkle90 {
+  position: absolute;
+  left: 9.276589775%;
+  top: -15.2941434608%;
+  background-color: #9a52c6;
+  -webkit-animation-delay: -9s;
+          animation-delay: -9s;
+}
+.sprinkles .sprinkle91 {
+  position: absolute;
+  left: 59.7536752246%;
+  top: 51.1673634048%;
+  background-color: #fd6be5;
+  -webkit-animation-delay: -9.1s;
+          animation-delay: -9.1s;
+}
+.sprinkles .sprinkle92 {
+  position: absolute;
+  left: 29.9561361809%;
+  top: 60.8277499835%;
+  background-color: #a9d8a2;
+  -webkit-animation-delay: -9.2s;
+          animation-delay: -9.2s;
+}
+.sprinkles .sprinkle93 {
+  position: absolute;
+  left: 36.0631816749%;
+  top: 46.5932832973%;
+  background-color: #ffb8d0;
+  -webkit-animation-delay: -9.3s;
+          animation-delay: -9.3s;
+}
+.sprinkles .sprinkle94 {
+  position: absolute;
+  left: 44.9558303603%;
+  top: 41.6733822737%;
+  background-color: #ff8c62;
+  -webkit-animation-delay: -9.4s;
+          animation-delay: -9.4s;
+}
+.sprinkles .sprinkle95 {
+  position: absolute;
+  left: 35.598983533%;
+  top: 37.5237019334%;
+  background-color: #ffd365;
+  -webkit-animation-delay: -9.5s;
+          animation-delay: -9.5s;
+}
+.sprinkles .sprinkle96 {
+  position: absolute;
+  left: 90.6019391706%;
+  top: -0.7712042567%;
+  background-color: #ffbb82;
+  -webkit-animation-delay: -9.6s;
+          animation-delay: -9.6s;
+}
+.sprinkles .sprinkle97 {
+  position: absolute;
+  left: 70.9352350582%;
+  top: 65.4554315199%;
+  background-color: #bc8a60;
+  -webkit-animation-delay: -9.7s;
+          animation-delay: -9.7s;
+}
+.sprinkles .sprinkle98 {
+  position: absolute;
+  left: 60.9618639256%;
+  top: 68.7138848521%;
+  background-color: #b4cae1;
+  -webkit-animation-delay: -9.8s;
+          animation-delay: -9.8s;
+}
+.sprinkles .sprinkle99 {
+  position: absolute;
+  left: 96.2391446745%;
+  top: 6.5542025531%;
+  background-color: #f28ea4;
+  -webkit-animation-delay: -9.9s;
+          animation-delay: -9.9s;
+}
+.sprinkles .sprinkle100 {
+  position: absolute;
+  left: 4.7543929064%;
+  top: -16.7748439428%;
+  background-color: #f35dd9;
+  -webkit-animation-delay: -10s;
+          animation-delay: -10s;
+}
+
+input:checked + .card {
+  background-position: 100%;
+}
+input:checked + .card * {
+  filter: brightness(98%);
+}
+input:checked + .card .candle-group .light {
+  -webkit-animation: lightAni 1s infinite, lightDisappearAni 1s forwards;
+          animation: lightAni 1s infinite, lightDisappearAni 1s forwards;
+}
+input:checked + .card .candle-group .smoke:before, input:checked + .card .candle-group .smoke:after {
+  display: block;
+}
+input:checked + .card .candle-group .smoke:before {
+  width: 20px;
+  height: 20px;
+  top: -60%;
+  left: 35%;
+  border-radius: 50%;
+  -webkit-animation: smokeTopAni 1s forwards;
+          animation: smokeTopAni 1s forwards;
+}
+input:checked + .card .candle-group .smoke:after {
+  width: 80px;
+  height: 5px;
+  top: -10%;
+  left: -100%;
+  border-radius: 10px;
+  transform-origin: 0% 50%;
+  -webkit-animation: smokeLeftAni 1s forwards;
+          animation: smokeLeftAni 1s forwards;
+}
+input:checked + .card .candle-group .candle .fire {
+  -webkit-animation: fireAni 1s infinite, fireDisappearAni 1s forwards;
+          animation: fireAni 1s infinite, fireDisappearAni 1s forwards;
+}
+input:checked + .card .boy-head {
+  -webkit-animation: blowHead 1s forwards;
+          animation: blowHead 1s forwards;
+}
+input:checked + .card .face .mouth {
+  -webkit-animation: blowMouth 1s forwards;
+          animation: blowMouth 1s forwards;
+}
+input:checked + .card .body {
+  -webkit-animation: breath 2s infinite, blowBody 1s forwards;
+          animation: breath 2s infinite, blowBody 1s forwards;
+}
+input:checked + .card .sprinkles [class^=sprinkle] {
+  width: 6px;
+  height: 12px;
+}
+
+@-webkit-keyframes titleAni {
+  60% {
+    transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+  }
+}
+
+@keyframes titleAni {
+  60% {
+    transform: rotate(-2deg) scale(1.05) translate(2px, 2px);
+  }
+}
+@-webkit-keyframes blink {
+  0%, 95% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0px 31px #ffddad inset;
+  }
+}
+@keyframes blink {
+  0%, 95% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0px 31px #ffddad inset;
+  }
+}
+@-webkit-keyframes eyebrowsAni {
+  0%, 100% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-5%);
+  }
+}
+@keyframes eyebrowsAni {
+  0%, 100% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-5%);
+  }
+}
+@-webkit-keyframes blushAni {
+  0%, 100% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: translateY(5%);
+  }
+}
+@keyframes blushAni {
+  0%, 100% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: translateY(5%);
+  }
+}
+@-webkit-keyframes lightAni {
+  60% {
+    transform: scale(1.5);
+  }
+}
+@keyframes lightAni {
+  60% {
+    transform: scale(1.5);
+  }
+}
+@-webkit-keyframes fireAni {
+  0%, 100% {
+    transform: translate(-40%, -100%) rotate(-28deg);
+  }
+  60% {
+    transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+    background: #ffc36b;
+  }
+}
+@keyframes fireAni {
+  0%, 100% {
+    transform: translate(-40%, -100%) rotate(-28deg);
+  }
+  60% {
+    transform: translate(-30%, -110%) rotate(-40deg) scaleX(1.3) scaleY(1.1);
+    background: #ffc36b;
+  }
+}
+@-webkit-keyframes leftHandAni {
+  0%, 100% {
+    transform: rotate(100deg);
+  }
+  60% {
+    transform: rotate(80deg);
+  }
+}
+@keyframes leftHandAni {
+  0%, 100% {
+    transform: rotate(100deg);
+  }
+  60% {
+    transform: rotate(80deg);
+  }
+}
+@-webkit-keyframes rightHandAni {
+  0%, 100% {
+    transform: rotate(-120deg);
+  }
+  60% {
+    transform: rotate(-80deg);
+  }
+}
+@keyframes rightHandAni {
+  0%, 100% {
+    transform: rotate(-120deg);
+  }
+  60% {
+    transform: rotate(-80deg);
+  }
+}
+@-webkit-keyframes breath {
+  60% {
+    transform: scaleX(1.05);
+  }
+}
+@keyframes breath {
+  60% {
+    transform: scaleX(1.05);
+  }
+}
+@-webkit-keyframes breathMouth {
+  60% {
+    transform: rotate(-5deg) scale(1.1);
+  }
+}
+@keyframes breathMouth {
+  60% {
+    transform: rotate(-5deg) scale(1.1);
+  }
+}
+@-webkit-keyframes sprinkleAni {
+  0%, 100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50px, 250px);
+  }
+}
+@keyframes sprinkleAni {
+  0%, 100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50px, 250px);
+  }
+}
+@-webkit-keyframes blowMouth {
+  30% {
+    transform: rotate(-5deg) scale(1.5);
+  }
+  70% {
+    transform: rotate(-5deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(-5deg) scale(0.3);
+  }
+}
+@keyframes blowMouth {
+  30% {
+    transform: rotate(-5deg) scale(1.5);
+  }
+  70% {
+    transform: rotate(-5deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(-5deg) scale(0.3);
+  }
+}
+@-webkit-keyframes blowHead {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+}
+@keyframes blowHead {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+}
+@-webkit-keyframes blowBody {
+  0%, 100% {
+    width: 90%;
+    height: 80%;
+  }
+  30% {
+    width: 100%;
+    height: 80%;
+    left: -5%;
+  }
+  70% {
+    width: 80%;
+    height: 80%;
+    left: 1%;
+  }
+}
+@keyframes blowBody {
+  0%, 100% {
+    width: 90%;
+    height: 80%;
+  }
+  30% {
+    width: 100%;
+    height: 80%;
+    left: -5%;
+  }
+  70% {
+    width: 80%;
+    height: 80%;
+    left: 1%;
+  }
+}
+@-webkit-keyframes lightDisappearAni {
+  0%, 69% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+  }
+  70%, 100% {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}
+@keyframes lightDisappearAni {
+  0%, 69% {
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+  }
+  70%, 100% {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+}
+@-webkit-keyframes fireDisappearAni {
+  0%, 69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes fireDisappearAni {
+  0%, 69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@-webkit-keyframes smokeTopAni {
+  0%, 60%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+    top: -70%;
+    left: 20%;
+  }
+  100% {
+    top: -90%;
+    left: 0%;
+  }
+}
+@keyframes smokeTopAni {
+  0%, 60%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+    top: -70%;
+    left: 20%;
+  }
+  100% {
+    top: -90%;
+    left: 0%;
+  }
+}
+@-webkit-keyframes smokeLeftAni {
+  0%, 60%, 100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  70% {
+    left: -120%;
+    opacity: 1;
+    transform: scaleX(1.1);
+  }
+  100% {
+    left: -150%;
+  }
+}
+@keyframes smokeLeftAni {
+  0%, 60%, 100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  70% {
+    left: -120%;
+    opacity: 1;
+    transform: scaleX(1.1);
+  }
+  100% {
+    left: -150%;
+  }
+}
